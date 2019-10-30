@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/zhiqiangxu/qrpc/codegen"
 	"github.com/zhiqiangxu/qrpc-demo/codegen/service"
+	"github.com/zhiqiangxu/qrpc/codegen"
 )
 
 func main() {

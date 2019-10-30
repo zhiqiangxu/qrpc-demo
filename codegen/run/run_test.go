@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/zhiqiangxu/qrpc"
-	"github.com/zhiqiangxu/qrpc/codegen/test/demo"
-	"github.com/zhiqiangxu/qrpc/codegen/test/service"
+	"github.com/zhiqiangxu/qrpc-demo/codegen/generated"
+	"github.com/zhiqiangxu/qrpc-demo/codegen/service"
 )
 
 const (
@@ -18,7 +18,7 @@ const (
 )
 
 func startServer() {
-	sm := demo.NewDemoServiceMux()
+	sm := generated.NewDemoServiceMux()
 	var svc service.Service
 	sm.Register(&svc)
 	bindings := []qrpc.ServerBinding{
@@ -37,7 +37,7 @@ func TestCGPerformance(t *testing.T) {
 	time.Sleep(time.Second)
 
 	// 生成客户端
-	client := demo.NewDemoClient([]string{addr}, qrpc.ConnectionConfig{})
+	client := generated.NewDemoClient([]string{addr}, qrpc.ConnectionConfig{})
 
 	i := 0
 	var wg sync.WaitGroup
