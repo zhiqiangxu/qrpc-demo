@@ -47,7 +47,7 @@ func TestCGPerformance(t *testing.T) {
 		qrpc.GoFunc(&wg, func() {
 			// 通过被替换的函数指针调用服务
 			result := client.Hello(context.Background(), 123)
-			if !(result.OK() && result.N == 123) {
+			if !(result.Err == "" && result.N == 123) {
 				panic(fmt.Sprintf("fail:%v", result))
 			}
 

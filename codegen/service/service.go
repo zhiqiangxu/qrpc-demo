@@ -2,8 +2,6 @@ package service
 
 import (
 	"context"
-
-	"github.com/zhiqiangxu/qchat/pkg/core"
 )
 
 type Service struct {
@@ -11,8 +9,8 @@ type Service struct {
 
 // Result for response
 type Result struct {
-	core.BaseResp
-	N int
+	Err string
+	N   int
 }
 
 // SetError for output
@@ -21,7 +19,7 @@ func (r *Result) SetError(err error) {
 		return
 	}
 
-	r.SetBase(core.ErrAPI, err.Error())
+	r.Err = err.Error()
 }
 
 // Hello method
