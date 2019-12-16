@@ -7,6 +7,7 @@ import (
 
 //请在generated目录运行该main函数，
 //该main函数会将Client和Server代码生成到generated目录
+//在哪个目录下运行，生成的package便是什么名字
 //然后便可运行run_test中的TestCGPerformance
 func main() {
 
